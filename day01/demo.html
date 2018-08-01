@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        *   写一个函数execTime
+        *   参数：时间毫秒数
+        *   作用：什么都不做 但函数执行会耗时参数传递的毫秒数
+        * */
+        
+        function execTime(t) {
+            // 补全代码
+            var start = new Date().getTime();
+            var end = new Date().getTime();
+            while(end-start < t) {
+                end = new Date().getTime();
+            }
+            
+        }
+        console.log(1); // 输出1
+        execTime(3000); // 运行3秒钟
+        console.log(2); // 3秒后输出2
+    </script>
+</body>
+</html>
