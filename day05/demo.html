@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 写出一个函数fn,使得fn满足以下条件：
+         * 1.fn()打印出‘a’
+         * 2.fn()()打印出'b'
+         * 3.fn()()()打印出'c'
+         * */
+        function fn() {
+            var r = 'a';
+            var timer = setTimeout(() => {
+                console.log(r)
+            });
+            return function() {
+                r = "b";
+                return function() {
+                    r = "c"
+                }
+            }
+        }
+        fn();
+        fn()();
+        fn()()();
+    </script>
+</body>
+</html>
