@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     /**
+      *   小明成绩不好，每次考试都靠瞎猜，小明的老师对他说：
+      *   小明，如果考不到60分你继续考，直到考到60分，
+      *   我实现你的愿望让你和凯丽坐到一起
+      * */    
+     function exam() {
+         var score = Math.floor(Math.random()*101);
+       //  console.log(score);
+         return new Promise(function(resolve, reject) {
+             while(score < 60) {
+                console.log(score,'不及格，继续考试');
+                score = Math.floor(Math.random()*101);
+             }
+             resolve(score);
+         })
+        //  if(score >= 60 ) {
+        //      console.log('及格，和凯丽坐到一起')
+        //  } else {
+        //      console.log('不及格，继续考试');
+        //      setTimeout(exam, 1000);
+        //  }
+     }
+
+     exam().then((score) => {
+         console.log(score,'及格，和凯丽坐到一起')
+     })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /**
+         * 写出一个函数fn,使得fn满足以下条件：
+         * 1.fn()==‘a’
+         * 2.fn()()=='b'
+         * 3.fn()()()=='c'
+         * */
+         var a,b;
+         function fn() {
+             return a;
+         }
+         a.valueOf = function() {
+             return 'a';
+         }
+         function a() {
+             return b;
+         }
+         b.valueOf = function() {
+             return 'b';
+         }
+         function b() {
+             return "c";
+         }
+      //  fn()()();
+
+        console.log(fn() == 'a');
+        console.log(fn()() == "b");
+        console.log(fn()()() == 'c')  
+    </script>
+</body>
+</html>
