@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 写一个byField函数，实现数组按姓名，年纪，任意字段排序
+         * 
+         * */
+         const users = [{
+                 name: 'John',
+                 age: 20,
+                 company: 'Baidu'
+             },
+             {
+                 name: 'Pete',
+                 age: 18,
+                 company: 'Alibaba'
+             },
+             {
+                 name: 'Ann',
+                 age: 19,
+                 company: 'Tencent'
+             }];     
+         function byField(key){
+             return function(a,b) {
+                 if(a[key] > b[key]){
+                    return 1;
+                 }
+                 if(a[key] < b[key]){
+                    return -1;
+                 }
+             }
+         }       
+        console.log(users.sort(byField('name')))
+        //console.log(users.sort(byField('age')))
+       // console.log(users.sort(byField('company')))
+    </script>
+</body>
+</html>
